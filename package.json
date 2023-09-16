@@ -1,0 +1,22 @@
+{
+  "name": "upscaletest",
+  "version": "1.0.0",
+  "description": "Test automation for UpScale webpage",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "test command"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webertamas/UpScaleTests.git"
+  },
+  "keywords": [
+    "qa"
+  ],
+  "author": "Weber Tamas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webertamas/UpScaleTests/issues"
+  },
+  "homepage": "https://github.com/webertamas/UpScaleTests#readme"
+}
