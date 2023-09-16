@@ -4,8 +4,8 @@ describe('home page', () => {
   })
 
   context('Cookies', () => {
-  it('Accept cookies', () => {
-    cy.get('.done-gdpr-button-allow > .done-gdpr-alert-box-button-middle').as('acceptCookieButton')
+  it.only('Accept cookies', () => {
+    cy.get('.done-gdpr-button-allow > .done-gdpr-alert-box-button-middle2').as('acceptCookieButton')
     
     cy.get('@acceptCookieButton').click()
     cy.get('@acceptCookieButton').should('not.be.visible')
