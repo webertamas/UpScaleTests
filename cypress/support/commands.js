@@ -24,8 +24,29 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-  
-  Cypress.Commands.add("getByData", (selector) => {
-    return cy.get(`[data-test=${selector}]`)
+Cypress.Commands.add("getByData", (selector) => {
+  return cy.get(`[data-test=${selector}]`)
+})
+
+Cypress.Commands.add("acceptCookies", () => {
+  cy.get('.done-gdpr-button-allow > .done-gdpr-alert-box-button-middle').as('acceptCookieButton')
+  cy.get('@acceptCookieButton').click()
+  cy.get('@acceptCookieButton').should('not.be.visible')
+})
+
+Cypress.Commands.add("goToJoinUs", () => {
+  cy.get('#menu-header-1 > .menu-item-type-post_type_archive > .nav-link').click()
+  cy.location('pathname').should('equal', '/csatlakozz/')
+})
+
+Cypress.Commands.add("omitUncaughtException", (err, runnable) => {
+  cy.on('uncaught:exception', (err, runnable) => {
+    return false
   })
-  
+})
+
+
+Cypress.Commands.add("fillDataAndAssert", (selector, any) => {
+  cy.get(selector).type(any)
+  cy.get(selector).should('have.value', any)
+})
