@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/webertamas/UpScaleTests/issues"
   },
-  "homepage": "https://github.com/webertamas/UpScaleTests#readme"
+  "homepage": "https://github.com/webertamas/UpScaleTests#readme",
+  "devDependencies": {
+    "playwright-webkit": "1.34"
+  }
 }
