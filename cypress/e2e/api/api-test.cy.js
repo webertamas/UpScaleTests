@@ -1,6 +1,6 @@
 describe('API tests', () => {
-    context("GET /users", () => {
-        it("gets a list of users", () => {
+    context('Gets a list of users', () => {
+        it('GET /users', () => {
             cy.request("GET", "https://fakerestapi.azurewebsites.net/api/v1/Activities").then((response) => {
                 expect(response.status).to.eq(200)
                 expect(response).property('status').to.equal(200)
@@ -8,7 +8,7 @@ describe('API tests', () => {
             })
         })
 
-        it('cy.request() with query parameters+++++', () => {
+        it('GET /users  - first user', () => {
             cy.request({
                 url: 'https://fakerestapi.azurewebsites.net/api/v1/Activities'
             })
@@ -22,17 +22,17 @@ describe('API tests', () => {
                     title: "Activity 1"
                 })
         })
+    })
 
-
-        it("POST", () => {
+    context('Add user', () => {
+        it('POST /users', () => {
             cy.request("POST", "https://fakerestapi.azurewebsites.net/api/v1/Activities",
                 {
                     "id": 0,
                     "title": "string",
                     "dueDate": "2023-09-17T20:29:23.672Z",
                     "completed": true
-                }
-            )
+                })
                 .then((response) => {
                     expect(response.status).to.eq(200)
                     expect(response).property('status').to.equal(200)
@@ -41,8 +41,6 @@ describe('API tests', () => {
                         "title": "string",
                         "dueDate": "2023-09-17T20:29:23.672Z",
                         "completed": true
-
-
                     })
                 })
         })

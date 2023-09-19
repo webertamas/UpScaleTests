@@ -23,10 +23,4 @@ describe('home page', () => {
       cy.location('pathname').should('equal', '/adatkezelesi-tajekoztato/')
     })
   })
-
-  context('something', () => {
-    it('Accept cookies', () => {
-      cy.get('.done-gdpr-button-allow > .done-gdpr-alert-box-button-middle')
-    })
-  })
 })
